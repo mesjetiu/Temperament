@@ -6,7 +6,7 @@ import math
 
 coma_pitag = (3.0/2)**12 / 2**7
 
-coma_sint = (3.0/2)**4 / (4*(5.0/4))
+coma_sint = (3.0/2)**4 / (5.0/4)**4
 
 diesis = coma_sint**3 / coma_pitag
 
