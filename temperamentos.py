@@ -4,6 +4,7 @@
 import math
 
 # Constantes
+
 quinta_pitag = 3.0/2
 q = quinta_pitag
 
