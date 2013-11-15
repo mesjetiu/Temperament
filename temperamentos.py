@@ -40,7 +40,7 @@ die = cents(diesis)
 
 fi = (math.sqrt (5) + 1) / 2
 
-def T12_cents (_quintas):
+def T12_cents (_quintas, redondeo = 2):
 	if len(_quintas) != 12:
 		print "Error: No se han introducido 12 valores para las quintas."
 		return
