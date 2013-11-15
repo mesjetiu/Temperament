@@ -51,7 +51,7 @@ def T12_cents (_quintas, redondeo = 2):
 		_T12.append (_suma)		
 	_T12_orden = [_T12[6], _T12[1],  _T12[8], _T12[3], _T12[10], _T12[5], _T12[0], _T12[7], _T12[2], _T12[9], _T12[4], _T12[11]]
 	for i in range(12):
-		_T12_orden[i] = round(_T12_orden[i] - ((i+1)*100), 2)
+		_T12_orden[i] = round(_T12_orden[i] - ((i+1)*100), redondeo)
 	_T12_orden.insert(0, _T12_orden[10])
 	del _T12_orden[12]
 	if _T12_orden[11] != 0:
