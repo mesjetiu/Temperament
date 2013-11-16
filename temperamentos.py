@@ -1,5 +1,34 @@
 # Modulo "temperamentos"
-# Conjunto de funciones utiles para afinaciones y temperamentos
+
+"""
+Conjunto de funciones utiles para afinaciones y temperamentos.
+
+La funcion mas compleja es T12_cents(list()).
+Input: una lista con el temperamento de cada quinta en cents.
+	Existe una serie de variables con contienen las principales comas
+	expresadas en cents para facilitar la representacion tel temperamento.
+	La quinta que contiene el resto acumulado en 11 quintas,
+	o quinta del lobo se representa con la variable L y no es necesario
+	conocer su valor previamente. El orden de las quintas parten de DO
+	y finalizan en SI# (o DO enharmonico)
+Output: La funcion devuelve otra lista que contiene la desviacion en cents
+	de cada nota de la escala (de DO a SI) respecto al temperamento igual.
+
+Ejemplo 1: Temperamento igual
+
+t = cp/12							# quinta temperada = coma pitatorica / 12
+TI = [t,t,t,t, t,t,t,t, t,t,t,t]
+T12_cents (TI)
+
+Ejemplo 2: Temperamento pitagorico
+
+TP = [0,0,0,0, 0,L,0,0, 0,0,0,0]		# La quinta del lobo se situa en SI - FA#
+T12_cents (TP)
+
+
+
+"""
+	
 
 import math
 
@@ -94,11 +123,4 @@ def T12_cents (_quintas, redondeo = 2):
 	print _T12_orden
 	
 	
-t = -cp/12
-temp = [t,cp,t,t,t,t,t,t,t,t,t,t]
-pit = [-cp,0,0,0, 0,0,0,0, 0,0,0,0]
-
-c = cs/4
-mesotonico = [ -c,-c,-c,-c, -c,-c,-c,-c, L,-c,-c,-c ]
-#mesotonico = [ -c,-c,-c,-c, -c,-c,-c,-c, -cp+3*cs-c,-c,-c,-c ]
-T12_cents (mesotonico)
+?
