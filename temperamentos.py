@@ -38,34 +38,51 @@ cs = cents(coma_sint)
 diesis = coma_sint**3 / coma_pitag
 die = cents(diesis)
 
+L = 'lobo'
+
 fi = (math.sqrt (5) + 1) / 2
 
 def T12_cents (_quintas, redondeo = 2):
+	
 	if len(_quintas) != 12:
 		print "Error: No se han introducido 12 valores para las quintas."
 		return
 	_T12 = []
 	_suma = 0
+	
 	for i in range(len(_quintas)):
-		if _quintas[i] == 'l' or _quintas[i] == 'L':
+		if _quintas[i] == L:
 			_T12.append ('lobo')
 			continue
 		_suma = (_suma + q + _quintas[i]) % 1200
-		_T12.append (_suma)		
+		_T12.append (_suma)	
+		
+	#Calculo de la quinta de lobo si la hay
+	if 'lobo' in _T12:
+		lobo = _T12[-1]
+		print "lobo =", lobo
+		punto_lobo = _T12.index('lobo')
+		_T12[punto_lobo] = lobo
+		for i in range(punto_lobo+1, len(_T12)):
+			_T12[i] = _T12[i] + lobo
+	
 	_T12_orden = [_T12[6], _T12[1],  _T12[8], _T12[3], _T12[10], _T12[5], _T12[0], _T12[7], _T12[2], _T12[9], _T12[4], _T12[11]]
+	
 	for i in range(12):
 		_T12_orden[i] = _T12_orden[i] - ((i+1)*100)%1200
-	#print _T12_orden
+
 	_T12_orden.insert(0, _T12_orden[-1])
-	#print _T12_orden
 	del _T12_orden[-1]
-	if round(_T12_orden[0],5) != 0:
+	
+	if round(_T12_orden[0],3) != 0:
 		print "Error: El circulo de quintas no se cierra."
 		return
+		
 	# Poner LA como referencia, a 0.0 cents
 	la_dif = 0 - _T12_orden[9]
 	for i in range(len(_T12_orden)):
 		_T12_orden[i] = _T12_orden[i] + la_dif
+		
 	# Redondeo
 	for i in range(len(_T12_orden)):
 		_T12_orden[i] = round (_T12_orden[i], redondeo)
@@ -76,4 +93,6 @@ t = -cp/12
 temp = [t,cp,t,t,t,t,t,t,t,t,t,t]
 pit = [-cp,0,0,0, 0,0,0,0, 0,0,0,0]
 
-
+c = cs/4
+mesotonico = [ -c,-c,-c,-c, -c,-c,-c,-c, L,-c,-c,-c ]
+T12_cents (mesotonico)
