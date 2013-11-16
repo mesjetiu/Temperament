@@ -32,7 +32,7 @@ o = cents(octava)
 coma_pitag = (3.0/2)**12 / 2**7
 cp = cents(coma_pitag)
 
-coma_sint = (3.0/2)**4 / (5.0/4)**4
+coma_sint = (3.0/2)**4 / 2**2 / (5.0/4)
 cs = cents(coma_sint)
 
 diesis = coma_sint**3 / coma_pitag
@@ -75,4 +75,5 @@ def T12_cents (_quintas, redondeo = 2):
 t = -cp/12
 temp = [t,cp,t,t,t,t,t,t,t,t,t,t]
 pit = [-cp,0,0,0, 0,0,0,0, 0,0,0,0]
-T12_cents (pit)
+
+
