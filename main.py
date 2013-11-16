@@ -22,14 +22,8 @@
 #  
 #  
 
-import temperamentos as tem
-
-def creditos():
-	print "Carlos Arturo Guerra Parra"
-	print "carlosarturoguerra@gmail.com"
-	print "2013"
-	
-comandos = { 'creditos' : creditos }
+from temperamentos import *
+from comandos import *
 
 
 def main():
@@ -37,9 +31,10 @@ def main():
 	sentencia = ""
 	while sentencia != "exit":
 		sentencia = raw_input("temp >>> ")
-		palabras = sentencia.split()
-		if palabras[0] in comandos:
-			comandos[palabras[0]]()	
+		if sentencia == "":
+			continue
+		if sentencia.split()[0] in comandos:
+			comandos[sentencia.split()[0]](sentencia)	
 	
 	
 	return 0
