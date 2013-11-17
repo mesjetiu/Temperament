@@ -18,12 +18,12 @@ Ejemplo 1: Temperamento igual
 
 t = cp/12							# quinta temperada = coma pitatorica / 12
 TI = [t,t,t,t, t,t,t,t, t,t,t,t]
-T12_cents (TI)
+print T12_cents (TI)
 
 Ejemplo 2: Temperamento pitagorico
 
 TP = [0,0,0,0, 0,L,0,0, 0,0,0,0]		# La quinta del lobo se situa en SI - FA#
-T12_cents (TP)
+print T12_cents (TP)
 """
 	
 
@@ -63,9 +63,49 @@ cs = round(cents(coma_sint),4)
 diesis = coma_sint**3 / coma_pitag
 die = round(cents(diesis),4)
 
-L = 'lobo'
-
 fi = (math.sqrt (5) + 1) / 2
+
+q_i = quinta_temperamento_igual = cp/12
+
+L = l = 'lobo'
+
+	
+class Escala:
+	def __init__ (self,
+	notas = [q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,], nombre,
+	inicio = 0, referencia = 9):
+		self.nombre = nombre
+		self.notas = notas
+		self.inicio = inicio
+		self.referencia = referencia
+	
+	def get_nombre():
+		return self.nombre
+		
+	def get_notas():
+		return self.notas
+		
+	def get_inicio():
+		return self.inicio
+		
+	def get_referencia():
+		return self.referencia
+		
+	
+	def set_nombre(nombre):
+		self.nombre = nombre
+		
+	def set_notas(notas):
+		self.notas = notas
+		
+	def set_inicio(inicio):
+		self.inicio = inicio
+		
+	def set_referencia(referencia):
+		self.referencia = referencia
+	
+	
+
 
 def T12_cents (_quintas, redondeo = 2):
 	
@@ -119,6 +159,5 @@ def T12_cents (_quintas, redondeo = 2):
 		_T12_orden[i] = round (_T12_orden[i], redondeo)
 		
 	return _T12_orden
-	
 	
 
