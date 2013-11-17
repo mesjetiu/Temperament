@@ -65,15 +65,13 @@ die = round(cents(diesis),4)
 
 fi = (math.sqrt (5) + 1) / 2
 
-q_i = quinta_temperamento_igual = cp/12
-
 L = l = 'lobo'
 
 	
 class Escala:
 	def __init__ (self,
-	notas = [q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,q_i,], nombre,
-	inicio = 0, referencia = 9):
+	notas = [0,0,0,0,0,0,0,0,0,0,0,0],
+	nombre = "Temperamento igual", inicio = 0, referencia = 9):
 		self.nombre = nombre
 		self.notas = notas
 		self.inicio = inicio
