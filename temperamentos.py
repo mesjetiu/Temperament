@@ -44,8 +44,7 @@ fi = (math.sqrt (5) + 1) / 2
 def T12_cents (_quintas, redondeo = 2):
 	
 	if len(_quintas) != 12:
-		print "Error: No se han introducido 12 valores para las quintas."
-		return
+		return "Error: No se han introducido 12 valores para las quintas."
 	_T12 = []
 	_suma = 0
 	
@@ -80,8 +79,7 @@ def T12_cents (_quintas, redondeo = 2):
 	del _T12_orden[-1]
 	
 	if round(_T12_orden[0],3) != 0:
-		print "Error: El circulo de quintas no se cierra."
-		return
+		return "Error: El circulo de quintas no se cierra."
 		
 	# Poner LA como referencia, a 0.0 cents
 	la_dif = 0 - _T12_orden[9]
