@@ -18,15 +18,12 @@ Ejemplo 1: Temperamento igual
 
 t = cp/12							# quinta temperada = coma pitatorica / 12
 TI = [t,t,t,t, t,t,t,t, t,t,t,t]
-T12_cents (TI)
+print T12_cents (TI)
 
 Ejemplo 2: Temperamento pitagorico
 
 TP = [0,0,0,0, 0,L,0,0, 0,0,0,0]		# La quinta del lobo se situa en SI - FA#
-T12_cents (TP)
-
-
-
+print T12_cents (TP)
 """
 	
 
@@ -120,7 +117,4 @@ def T12_cents (_quintas, redondeo = 2):
 	# Redondeo
 	for i in range(len(_T12_orden)):
 		_T12_orden[i] = round (_T12_orden[i], redondeo)
-	print _T12_orden
-	
-	
-?
+	return _T12_orden
