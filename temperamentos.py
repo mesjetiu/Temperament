@@ -72,35 +72,35 @@ class Escala:
 	def __init__ (self,
 	notas = [0,0,0,0,0,0,0,0,0,0,0,0],
 	nombre = "Temperamento igual", inicio = 0, referencia = 9):
-		self.nombre = nombre
-		self.notas = notas
-		self.inicio = inicio
-		self.referencia = referencia
+		self._nombre = nombre
+		self._notas = notas
+		self._inicio = inicio
+		self.r_eferencia = referencia
 	
-	def get_nombre():
-		return self.nombre
+	def get_nombre(self):
+		return self._nombre
 		
-	def get_notas():
-		return self.notas
+	def get_notas(self):
+		return self._notas
 		
-	def get_inicio():
-		return self.inicio
+	def get_inicio(self):
+		return self._inicio
 		
-	def get_referencia():
-		return self.referencia
+	def get_referencia(self):
+		return self._referencia
 		
 	
-	def set_nombre(nombre):
-		self.nombre = nombre
+	def set_nombre(self, nombre):
+		self._nombre = nombre
 		
-	def set_notas(notas):
-		self.notas = notas
+	def set_notas(self, notas):
+		self._notas = notas
 		
-	def set_inicio(inicio):
-		self.inicio = inicio
+	def set_inicio(self, inicio):
+		self._inicio = inicio
 		
-	def set_referencia(referencia):
-		self.referencia = referencia
+	def set_referencia(self, referencia):
+		self._referencia = referencia
 	
 	
 
