@@ -84,7 +84,7 @@ def T12_cents (_quintas, redondeo = 2):
 	# Calculo de la quinta de lobo si la hay
 	if 'lobo' in _T12:
 		lobo = _T12[-1] + q - o*7
-		%print "lobo =", lobo
+		# print "lobo =", lobo
 		punto_lobo = _T12.index('lobo')
 		_T12[punto_lobo] = _T12[punto_lobo-1] + q - lobo
 		for i in range(punto_lobo+1, len(_T12)):
