@@ -76,6 +76,9 @@ class Escala:
 		self._notas = notas
 		self._inicio = inicio
 		self.r_eferencia = referencia
+		
+	def __str__ (self):		# Cuando se haga print sobre un objeto Escala se ejecutara esta funcion.
+		return notas
 	
 	def get_nombre(self):
 		return self._nombre
